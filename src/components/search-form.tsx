@@ -11,6 +11,7 @@ export function SearchForm() {
   const query = searchParams.get('q')
 
   function handleSearch(event: FormEvent<HTMLFormElement>) {
+    console.log('I was clicked')
     event.preventDefault()
 
     const formData = new FormData(event.currentTarget)
@@ -34,9 +35,11 @@ export function SearchForm() {
       <Search className="w-5 h-5 text-zinc-500" />
 
       <input
+        name="q"
         defaultValue={query ?? ''}
         className="flex-1 bg-transparent text-sm outline-none placeholder:text-zinc-500"
         placeholder="Buscar produtos..."
+        required
       />
     </form>
   )
